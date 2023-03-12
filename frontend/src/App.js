@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import Dashboard from './components/Dashboard/Dashboard';
@@ -17,7 +18,8 @@ function App() {
       <Route exact path="/upload" element={<Upload/>} />
       <Route exact path="/signIn" element={<SignIn/>} />
       <Route exact path="/signUp" element={<SignUp/>} />
-      <Route exact path="/signOut" element={<SignOut/>} />  
+      <Route exact path="/signOut" element={<SignOut/>} /> 
+
     </Routes>
     </BrowserRouter>
   );

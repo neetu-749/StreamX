@@ -30,6 +30,7 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     if (localStorage.getItem('userTokenTime')) {
+      console.log(localStorage);
       axios.get('http://127.0.0.1:5000/api/videoList', {
         headers: {
           'Content-Type': 'application/json',

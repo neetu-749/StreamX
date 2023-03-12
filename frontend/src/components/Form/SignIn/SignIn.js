@@ -30,16 +30,20 @@ class SignIn extends React.Component {
         password: this.state.password
       }).then(res => {
         // console.log(res);
+        localStorage.setItem('userTokenTime', JSON.stringify({
+            token: res.data.token,
+            time: new Date().getTime()
+        }));
           this.setState({
             token: res.data.token
           });
-        console.log(this.state.token);
-        const data = {
-          token: this.state.token,
-          time: new Date().getTime()
-        }
+        // console.log(this.state.token);
+        // const data = {
+        //   token: this.state.token,
+        //   time: new Date().getTime()
+        // }
         // console.log(data);
-        localStorage.setItem('userTokenTime', JSON.stringify(data));
+        
         this.setState({
           redirect: true
         });
@@ -67,7 +71,7 @@ class SignIn extends React.Component {
     if (this.state.redirect) return <Navigate to="/" />;
     return (
       <Form onSubmit={this.onSubmitHandler.bind(this)}>
-        <h6>Already a user? </h6><h3 className="text-center text-info">Login</h3>
+        <h3 className="text-center text-info">Login</h3>
         <div className="form-group">
           <label htmlFor="email" className="text-info">Email:</label><br />
           <input
