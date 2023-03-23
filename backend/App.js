@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const checkAuth=require('./middleware/check-auth');
 
-const MONGO_URL = "mongodb+srv://ghoon:ghoon@cluster0.6e7csob.mongodb.net/video_api?retryWrites=true&w=majority";
+const MONGO_URL = "mongodb+srv://<DB_USERNAME>:<DB_PASSWORD>@cluster0.6e7csob.mongodb.net/video_api?retryWrites=true&w=majority";
 
 mongoose.set("strictQuery", false);
 mongoose
